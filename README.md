@@ -1,6 +1,6 @@
 ## Periodic Table KB Project Report
 ----
-####### (SHREEJAA TALLA)
+*SHREEJAA TALLA*
 
 ##### Folder Structure:
 ```
@@ -38,10 +38,10 @@
 
 
 
-- Index.js: Contains ajax calls for the above APIs and results are stored in tables.
+**Index.js** : Contains ajax calls for the above APIs and results are stored in tables.
 
 
 
-- Index.html:Contains Bootstrap elements and a background image with 5 dropdowns for states, classifications, blocks, periods, and groups. 
+**Index.html** :Contains Bootstrap elements and a background image with 5 dropdowns for states, classifications, blocks, periods, and groups. 
 
 

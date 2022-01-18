@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="{{url_for('static',filename='js/index.js')}}"></script>
+<style>
+body{
+  background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/itCjTBE/abstract-grey-dna-molecular-structure-animated-background-motion-graphic-design-medical-video-clip-ultra-hd-4k-3840x2160_h5xa17tr_thumbnail-full01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: grey,black;
+}
+h1{
+  text-align:center;
+}
+h3{
+  text-align:center;
+}
+table{
+  align-items: center;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: medium;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/api/docs">Documentation</a>
+    </div>
+  </nav>
+<header>
+    <h1>Periodic Table Knowledge Base</h1>
+</header>
+<table class="table table-borderless" id="options_table">
+  <tr>
+  <td>Standard State</td>
+  <td>Classification</td>
+  <td>Blocks</td>
+  <td>Groups</td>
+  <td>Periods</td>
+  </tr>
+  <tr>
+  <td>
+    <div class="dropdown" id="state">
+    </div>
+  </td>
+  <td>
+    <div class="dropdown" id="clss">
+    </div>
+  </div>
+  </td>
+  <td>
+    <div class="dropdown" id="block">
+    </div>
+  </td>
+  <td>
+    <div class="dropdown" id="group">
+    </div>
+  </td>
+  <td>
+    <div class="dropdown" id="period">
+    </div>
+  </td>
+  </tr>
+  </table>
+<div id="result" style="display: none;">
+  <hr>
+  <h3>Elements</h3>
+  <table class="table table-borderless" id="rtable">
+  </table>
+</div>
+<div id="elementDetails" style="display: none;">
+  <hr>
+  <h3>Element Details</h3>
+  <table id="ele_detail" class="table" style="width: auto">
+  </table>
+</div>
+</body>
+</html>

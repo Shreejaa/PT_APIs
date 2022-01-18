@@ -1,0 +1,787 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Periodic Table</title>
+    <style type="text/css">
+      body {
+      	font-family: Trebuchet MS, sans-serif;
+      	font-size: 15px;
+      	color: #444;
+      	margin-right: 24px;
+      }
+      
+      h1	{
+      	font-size: 25px;
+      }
+      h2	{
+      	font-size: 20px;
+      }
+      h3	{
+      	font-size: 16px;
+      	font-weight: bold;
+      }
+      hr	{
+      	height: 1px;
+      	border: 0;
+      	color: #ddd;
+      	background-color: #ddd;
+      }
+      
+      .app-desc {
+        clear: both;
+        margin-left: 20px;
+      }
+      .param-name {
+        width: 100%;
+      }
+      .license-info {
+        margin-left: 20px;
+      }
+      
+      .license-url {
+        margin-left: 20px;
+      }
+      
+      .model {
+        margin: 0 0 0px 20px;
+      }
+      
+      .method {
+        margin-left: 20px;
+      }
+      
+      .method-notes	{
+      	margin: 10px 0 20px 0;
+      	font-size: 90%;
+      	color: #555;
+      }
+      
+      pre {
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+      
+      .http-method {
+       text-transform: uppercase;
+      }
+      
+      pre.get {
+        background-color: #0f6ab4;
+      }
+      
+      pre.post {
+        background-color: #10a54a;
+      }
+      
+      pre.put {
+        background-color: #c5862b;
+      }
+      
+      pre.delete {
+        background-color: #a41e22;
+      }
+      
+      .huge	{
+      	color: #fff;
+      }
+      
+      pre.example {
+        background-color: #f3f3f3;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      
+      code {
+        white-space: pre;
+      }
+      
+      .nickname {
+        font-weight: bold;
+      }
+      
+      .method-path {
+        font-size: 1.5em;
+        background-color: #0f6ab4;
+      }
+      
+      .up {
+        float:right;
+      }
+      
+      .parameter {
+        width: 500px;
+      }
+      
+      .param {
+        width: 500px;
+        padding: 10px 0 0 20px;
+        font-weight: bold;
+      }
+      
+      .param-desc {
+        width: 700px;
+        padding: 0 0 0 20px;
+        color: #777;
+      }
+      
+      .param-type {
+        font-style: italic;
+      }
+      
+      .param-enum-header {
+      width: 700px;
+      padding: 0 0 0 60px;
+      color: #777;
+      font-weight: bold;
+      }
+      
+      .param-enum {
+      width: 700px;
+      padding: 0 0 0 80px;
+      color: #777;
+      font-style: italic;
+      }
+      
+      .field-label {
+        padding: 0;
+        margin: 0;
+        clear: both;
+      }
+      
+      .field-items	{
+      	padding: 0 0 15px 0;
+      	margin-bottom: 15px;
+      }
+      
+      .return-type {
+        clear: both;
+        padding-bottom: 10px;
+      }
+      
+      .param-header {
+        font-weight: bold;
+      }
+      
+      .method-tags {
+        text-align: right;
+      }
+      
+      .method-tag {
+        background: none repeat scroll 0% 0% #24A600;
+        border-radius: 3px;
+        padding: 2px 10px;
+        margin: 2px;
+        color: #FFF;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>Periodic Table</h1>
+    <div class="app-desc">Periodic table Knowledge base</div>
+    <div class="app-desc">Contact Info: <a href="stalla1@student.gsu.edu">stalla1@student.gsu.edu</a></div>
+    <div class="app-desc">Version: 1.0.0-oas3</div>
+    
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Default">Default</a></h4>
+  <ul>
+  <li><a href="#periodictableBlocksGet"><code><span class="http-method">get</span> /periodictable/blocks/</code></a></li>
+  <li><a href="#periodictableBlockstringblkGet"><code><span class="http-method">get</span> /periodictable/block/&lt;string:blk&gt;/</code></a></li>
+  <li><a href="#periodictableClassificationsGet"><code><span class="http-method">get</span> /periodictable/classifications/</code></a></li>
+  <li><a href="#periodictableClassificationstringclssGet"><code><span class="http-method">get</span> /periodictable/classification/&lt;string:clss&gt;/</code></a></li>
+  <li><a href="#periodictableElementstringsymGet"><code><span class="http-method">get</span> /periodictable/element/&lt;string:sym&gt;/</code></a></li>
+  <li><a href="#periodictableGroupsGet"><code><span class="http-method">get</span> /periodictable/groups/</code></a></li>
+  <li><a href="#periodictableGroupstringgnumGet"><code><span class="http-method">get</span> /periodictable/group/&lt;string:gnum&gt;/</code></a></li>
+  <li><a href="#periodictablePeriodintpnumGet"><code><span class="http-method">get</span> /periodictable/period/&lt;int:pnum&gt;/</code></a></li>
+  <li><a href="#periodictablePeriodsGet"><code><span class="http-method">get</span> /periodictable/periods/</code></a></li>
+  <li><a href="#periodictableStandardStatesGet"><code><span class="http-method">get</span> /periodictable/standard_states/</code></a></li>
+  <li><a href="#periodictableStandardStatestringstateGet"><code><span class="http-method">get</span> /periodictable/standard_state/&lt;string:state&gt;/</code></a></li>
+  <li><a href="#rootGet"><code><span class="http-method">get</span> /</code></a></li>
+  </ul>
+
+  <h1><a name="Default">Default</a></h1>
+  <div class="method"><a name="periodictableBlocksGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/blocks/</code></pre></div>
+    <div class="method-summary">Get all the blocks (<span class="nickname">periodictableBlocksGet</span>)</div>
+    <div class="method-notes">Get a list of all the unique blocks of all chemical elements</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#block">block</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ "", "" ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of blocks
+        <a href="#block">block</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictableBlockstringblkGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/block/&lt;string:blk&gt;/</code></pre></div>
+    <div class="method-summary">Get all elements based on blocks (<span class="nickname">periodictableBlockstringblkGet</span>)</div>
+    <div class="method-notes">Get a list of all the elements based on the given blocks</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#elements">elements</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "symbol" : "symbol",
+  "name" : "name"
+}, {
+  "symbol" : "symbol",
+  "name" : "name"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of elements
+        <a href="#elements">elements</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictableClassificationsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/classifications/</code></pre></div>
+    <div class="method-summary">Get all the classifications (<span class="nickname">periodictableClassificationsGet</span>)</div>
+    <div class="method-notes">Get a list of all the unique classifications of all chemical elements</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#classifications">classifications</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ "", "" ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of classifications
+        <a href="#classifications">classifications</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictableClassificationstringclssGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/classification/&lt;string:clss&gt;/</code></pre></div>
+    <div class="method-summary">Get all elements based on classifications (<span class="nickname">periodictableClassificationstringclssGet</span>)</div>
+    <div class="method-notes">Get a list of all the elements based on the given classification</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#elements">elements</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "symbol" : "symbol",
+  "name" : "name"
+}, {
+  "symbol" : "symbol",
+  "name" : "name"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of elements
+        <a href="#elements">elements</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictableElementstringsymGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/element/&lt;string:sym&gt;/</code></pre></div>
+    <div class="method-summary">Get element based on symbol (<span class="nickname">periodictableElementstringsymGet</span>)</div>
+    <div class="method-notes">Get the element based on the given symbol</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#element">element</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "Group" : "Group",
+  "Atomic Number" : "Atomic Number",
+  "Symbol" : "Symbol",
+  "Classification" : "Classification",
+  "Color" : "Color",
+  "Atomic Weight" : "Atomic Weight",
+  "Block" : "Block",
+  "Period" : "Period",
+  "Standard State" : "Standard State",
+  "Name" : "Name"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Get the element based on the given symbol
+        <a href="#element">element</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictableGroupsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/groups/</code></pre></div>
+    <div class="method-summary">Get all the groups (<span class="nickname">periodictableGroupsGet</span>)</div>
+    <div class="method-notes">Get a list of all the unique groups of all chemical elements</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#groups">groups</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ "", "" ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of groups
+        <a href="#groups">groups</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictableGroupstringgnumGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/group/&lt;string:gnum&gt;/</code></pre></div>
+    <div class="method-summary">Get all elements based on group (<span class="nickname">periodictableGroupstringgnumGet</span>)</div>
+    <div class="method-notes">Get a list of all the elements based on the given group</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#elements">elements</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "symbol" : "symbol",
+  "name" : "name"
+}, {
+  "symbol" : "symbol",
+  "name" : "name"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of elements
+        <a href="#elements">elements</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictablePeriodintpnumGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/period/&lt;int:pnum&gt;/</code></pre></div>
+    <div class="method-summary">Get all elements based on period (<span class="nickname">periodictablePeriodintpnumGet</span>)</div>
+    <div class="method-notes">Get a list of all the elements based on the given period</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#elements">elements</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "symbol" : "symbol",
+  "name" : "name"
+}, {
+  "symbol" : "symbol",
+  "name" : "name"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of elements
+        <a href="#elements">elements</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictablePeriodsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/periods/</code></pre></div>
+    <div class="method-summary">Get all the periods (<span class="nickname">periodictablePeriodsGet</span>)</div>
+    <div class="method-notes">Get a list of all the unique periods of all chemical elements</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#periods">periods</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "number" : 0,
+  "period" : "period"
+}, {
+  "number" : 0,
+  "period" : "period"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of periods
+        <a href="#periods">periods</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictableStandardStatesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/standard_states/</code></pre></div>
+    <div class="method-summary">Get all the standard states (<span class="nickname">periodictableStandardStatesGet</span>)</div>
+    <div class="method-notes">Get a list of all the unique states of all chemical elements</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#states">states</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ "", "" ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of standard states
+        <a href="#states">states</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="periodictableStandardStatestringstateGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /periodictable/standard_state/&lt;string:state&gt;/</code></pre></div>
+    <div class="method-summary">Get all elements based on  standard states (<span class="nickname">periodictableStandardStatestringstateGet</span>)</div>
+    <div class="method-notes">Get a list of all the elements based on the given state</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#elements">elements</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "symbol" : "symbol",
+  "name" : "name"
+}, {
+  "symbol" : "symbol",
+  "name" : "name"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of elements
+        <a href="#elements">elements</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="rootGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /</code></pre></div>
+    <div class="method-summary">Get frontend application (<span class="nickname">rootGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    gets the html and js frontend app
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#block"><code>block</code></a></li>
+    <li><a href="#classifications"><code>classifications</code></a></li>
+    <li><a href="#element"><code>element</code></a></li>
+    <li><a href="#elements"><code>elements</code></a></li>
+    <li><a href="#elements_inner"><code>elements_inner</code></a></li>
+    <li><a href="#groups"><code>groups</code></a></li>
+    <li><a href="#periods"><code>periods</code></a></li>
+    <li><a href="#periods_inner"><code>periods_inner</code></a></li>
+    <li><a href="#states"><code>states</code></a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="block"><code>block</code></a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>list of blocks</div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="classifications"><code>classifications</code></a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>list of classifications</div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="element"><code>element</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">Name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Atomic Number (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Atomic Weight (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Block (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Classification (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Color (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Group (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Period (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Standard State (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Symbol (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="elements"><code>elements</code></a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>elements list</div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="elements_inner"><code>elements_inner</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">symbol (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="groups"><code>groups</code></a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>list of groups</div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="periods"><code>periods</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="periods_inner"><code>periods_inner</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">period (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">number (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="states"><code>states</code></a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>list of states</div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>

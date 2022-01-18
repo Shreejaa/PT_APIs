@@ -1,0 +1,283 @@
+{
+   "swagger": "2.0",
+   "info": {
+      "description": "Periodic table Knowledge base",
+      "version": "1.0.0",
+      "title": "Periodic Table"
+   },
+   "host": "localhost:5000",
+   "schemes": [
+      "http"
+   ],
+   "paths": {
+      "/": {
+         "get": {
+            "summary": "Get frontend application",
+            "responses": {
+               "200": {
+                  "description": "gets the html and js frontend app"
+               }
+            }
+         }
+      },
+      "/periodictable/standard_states/": {
+         "get": {
+            "summary": "Get all the standard states",
+            "description": "Get a list of all the unique states of all chemical elements",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of standard states",
+                  "schema": {
+                     "$ref": "#/definitions/states"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/standard_state/<string:state>/": {
+         "get": {
+            "summary": "Get all elements based on  standard states",
+            "description": "Get a list of all the elements based on the given state",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of elements",
+                  "schema": {
+                     "$ref": "#/definitions/elements"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/classifications/": {
+         "get": {
+            "summary": "Get all the classifications",
+            "description": "Get a list of all the unique classifications of all chemical elements",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of classifications",
+                  "schema": {
+                     "$ref": "#/definitions/classifications"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/classification/<string:clss>/": {
+         "get": {
+            "summary": "Get all elements based on classifications",
+            "description": "Get a list of all the elements based on the given classification",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of elements",
+                  "schema": {
+                     "$ref": "#/definitions/elements"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/blocks/": {
+         "get": {
+            "summary": "Get all the blocks",
+            "description": "Get a list of all the unique blocks of all chemical elements",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of blocks",
+                  "schema": {
+                     "$ref": "#/definitions/block"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/block/<string:blk>/": {
+         "get": {
+            "summary": "Get all elements based on blocks",
+            "description": "Get a list of all the elements based on the given blocks",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of elements",
+                  "schema": {
+                     "$ref": "#/definitions/elements"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/groups/": {
+         "get": {
+            "summary": "Get all the groups",
+            "description": "Get a list of all the unique groups of all chemical elements",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of groups",
+                  "schema": {
+                     "$ref": "#/definitions/groups"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/group/<string:gnum>/": {
+         "get": {
+            "summary": "Get all elements based on group",
+            "description": "Get a list of all the elements based on the given group",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of elements",
+                  "schema": {
+                     "$ref": "#/definitions/elements"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/periods/": {
+         "get": {
+            "summary": "Get all the periods",
+            "description": "Get a list of all the unique periods of all chemical elements",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of periods",
+                  "schema": {
+                     "$ref": "#/definitions/periods"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/period/<int:pnum>/": {
+         "get": {
+            "summary": "Get all elements based on period",
+            "description": "Get a list of all the elements based on the given period",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "list of elements",
+                  "schema": {
+                     "$ref": "#/definitions/elements"
+                  }
+               }
+            }
+         }
+      },
+      "/periodictable/element/<string:sym>/": {
+         "get": {
+            "summary": "Get element based on symbol",
+            "description": "Get the element based on the given symbol",
+            "parameters": [],
+            "responses": {
+               "200": {
+                  "description": "Get the element based on the given symbol",
+                  "schema": {
+                     "$ref": "#/definitions/element"
+                  }
+               }
+            }
+         }
+      }
+   },
+   "definitions": {
+      "elements": {
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {
+               "name": {
+                  "type": "string"
+               },
+               "symbol": {
+                  "type": "string"
+               }
+            }
+         },
+         "description": "elements list"
+      },
+      "states": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         },
+         "description": "list of states"
+      },
+      "classifications": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         },
+         "description": "list of classifications"
+      },
+      "block": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         },
+         "description": "list of blocks"
+      },
+      "groups": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         },
+         "description": "list of groups"
+      },
+      "periods": {
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {
+               "period": {
+                  "type": "string"
+               },
+               "number": {
+                  "type": "integer"
+               }
+            }
+         }
+      },
+      "element": {
+         "type": "object",
+         "properties": {
+            "Name": {
+               "type": "string"
+            },
+            "Atomic Number": {
+               "type": "string"
+            },
+            "Atomic Weight": {
+               "type": "string"
+            },
+            "Block": {
+               "type": "string"
+            },
+            "Classification": {
+               "type": "string"
+            },
+            "Color": {
+               "type": "string"
+            },
+            "Group": {
+               "type": "string"
+            },
+            "Period": {
+               "type": "string"
+            },
+            "Standard State": {
+               "type": "string"
+            },
+            "Symbol": {
+               "type": "string"
+            }
+         }
+      }
+   }
+}

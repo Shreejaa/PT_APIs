@@ -20,7 +20,7 @@ VM_USERNAME=`whoami`
 VM_HOME_DIR="/home/$VM_USERNAME"
 VM_PROJECT_PATH=""
 VM_NGINX_PATH='/etc/nginx'
-VM_PY_PATH="/usr/bin/python3.6"
+VM_PY_PATH="/usr/bin/python3.8"
 
 # deployment config
 DEPLOYMENT_ENV="development"
